@@ -1,0 +1,22 @@
+getwd()
+
+setwd("D:/Courses/2nd Year/Final exam/Exam/7")
+
+data=read.csv("Liver_data.csv",header = FALSE,col.names = c("1", "2", "3", "4", "5", "6", "7") )
+
+str(data)
+
+summary(data)
+
+x=data[,1:5]
+
+y=data[,6]
+
+fit=kmeans(x,4)
+
+library(class)
+
+knnfit = knn(fit$centers,x,as.factor(c(-2,-1,1,2)))
+e=1-sum(knnfit == y)/length(y)
+e
+#Error Rate = 0.973913
