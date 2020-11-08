@@ -33,12 +33,16 @@ y_test=test[,6,drop=TRUE]
 length(t)
 length(test)
 
+#k=1
+
 fit1=knn(x_t,x_t,y_t,k=1)
 1-sum(y_test == fit1)/length(y_test)
 
+#k=2
 fit2=knn(x_t,x_t,y_t,k=2)
 1-sum(y_test == fit2)/length(y_test)
 
+#k=3
 fit3=knn(x_t,x_t,y_t,k=3)
 1-sum(y_test == fit3)/length(y_test)
 
